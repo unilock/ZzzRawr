@@ -16,9 +16,6 @@
 			"icon": "assets/zzz_rawr/icon.png"
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
-		"entrypoints": {
-			"init": "cc.unilock.zzz_rawr.ZzzRawr"
-		},
 		"depends": [
 			{
 				"id": "quilt_loader",
