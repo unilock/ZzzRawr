@@ -1,0 +1,23 @@
+{
+	"schemaVersion": 1,
+	"id": "zzz_rawr",
+	"version": "${version}",
+	"name": "zzz... rrr... Rawr?",
+	"description": "Server mod that sends a (configurable) message to chat when it's time to wake up",
+	"authors": [
+		"unilock"
+	],
+	"contact": {
+		"sources": "https://github.com/unilock/ZzzRawr"
+	},
+	"license": "MIT",
+	"icon": "assets/zzz_rawr/icon.png",
+	"environment": "*",
+	"mixins": [
+		"zzz_rawr.mixins.json"
+	],
+	"depends": {
+		"fabricloader": "*",
+		"minecraft": ">=1.20"
+	}
+}
