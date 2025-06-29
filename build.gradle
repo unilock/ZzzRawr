@@ -1,6 +1,5 @@
 plugins {
 	id 'fabric-loom' version '1.10.+'
-	id 'maven-publish'
 }
 
 version = "${project.mod_version}+${project.minecraft_version}+fabric"
@@ -11,13 +10,16 @@ base {
 }
 
 repositories {
-	maven { url = "https://repo.sleeping.town/" }
+	maven {
+		name = 'Sleeping Town'
+		url = 'https://repo.sleeping.town/'
+	}
 }
 
 loom {
     mods {
-		"zzz_rawr" {
-			sourceSet("main")
+		'zzz_rawr' {
+			sourceSet sourceSets.main
 		}
 	}
 }
@@ -31,15 +33,15 @@ dependencies {
 }
 
 processResources {
-	inputs.property "version", project.version
+	inputs.property 'version', project.version
 
-	filesMatching("fabric.mod.json") {
-		expand "version": project.version
+	filesMatching('fabric.mod.json') {
+		expand 'version': project.version
 	}
 }
 
 tasks.withType(JavaCompile).configureEach {
-	it.options.encoding = "UTF-8"
+	it.options.encoding = 'UTF-8'
 	it.options.release = 17
 }
 
@@ -51,24 +53,7 @@ java {
 }
 
 jar {
-	from("LICENSE") {
+	from('LICENSE') {
 		rename { "${it}_${base.archivesName.get()}" }
-	}
-}
-
-// Configure the maven publication
-publishing {
-	publications {
-		mavenJava(MavenPublication) {
-			from components.java
-		}
-	}
-
-	// See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
-	repositories {
-		// Add repositories to publish to here.
-		// Notice: This block does NOT have the same function as the block in the top level.
-		// The repositories here will be used for publishing your artifact, not for
-		// retrieving dependencies.
 	}
 }

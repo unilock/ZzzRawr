@@ -8,19 +8,20 @@
 		"unilock"
 	],
 	"contact": {
-		"sources": "https://github.com/unilock/ZzzRawr"
+		"sources": "https://github.com/unilock/ZzzRawr",
+		"issues": "https://github.com/unilock/ZzzRawr/issues"
 	},
 	"license": "MIT",
 	"icon": "assets/zzz_rawr/icon.png",
 	"environment": "*",
-	"mixins": [
-		"zzz_rawr.mixins.json"
-	],
 	"entrypoints": {
 		"main": [
 			"cc.unilock.zzz_rawr.ZzzRawr"
 		]
 	},
+	"mixins": [
+		"zzz_rawr.mixins.json"
+	],
 	"depends": {
 		"fabricloader": "*",
 		"minecraft": ">=1.19.2"

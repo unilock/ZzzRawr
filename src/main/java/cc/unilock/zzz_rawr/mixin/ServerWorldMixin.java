@@ -15,6 +15,6 @@ import java.util.function.BooleanSupplier;
 public class ServerWorldMixin {
 	@Inject(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/world/ServerWorld;wakeSleepingPlayers()V"))
 	public void onWakeSleepingPlayers(BooleanSupplier shouldKeepTicking, CallbackInfo ci) {
-		((ServerWorld) (Object) this).getServer().getPlayerManager().broadcast(Text.literal(ZzzRawr.random(((ServerWorld) (Object) this).getRandom())).formatted(Formatting.GOLD), false);
+		((ServerWorld) (Object) this).getServer().getPlayerManager().broadcast(Text.literal(ZzzRawr.CONFIG.messages.value().get(((ServerWorld) (Object) this).getRandom().nextInt(ZzzRawr.CONFIG.messages.value().size()))).formatted(Formatting.GOLD), false);
 	}
 }

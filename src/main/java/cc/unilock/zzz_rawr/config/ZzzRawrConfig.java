@@ -1,15 +1,14 @@
 package cc.unilock.zzz_rawr.config;
 
-import folk.sisby.kaleido.api.WrappedConfig;
+import folk.sisby.kaleido.api.ReflectiveConfig;
 import folk.sisby.kaleido.lib.quiltconfig.api.annotations.Comment;
+import folk.sisby.kaleido.lib.quiltconfig.api.values.TrackedValue;
 import folk.sisby.kaleido.lib.quiltconfig.api.values.ValueList;
 
-import java.util.List;
-
-public class ZzzRawrConfig extends WrappedConfig {
+public class ZzzRawrConfig extends ReflectiveConfig {
 	@Comment("List of messages to send (one will be chosen at random)")
-	public final List<String> messages = ValueList.create("",
+	public final TrackedValue<ValueList<String>> messages = value(ValueList.create("",
 			"Wakey, wakey, rise and shine... Good Morning everyone!",
 			"zzz... rrr... Rawr?"
-	);
+	));
 }
