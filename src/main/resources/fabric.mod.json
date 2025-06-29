@@ -16,6 +16,11 @@
 	"mixins": [
 		"zzz_rawr.mixins.json"
 	],
+	"entrypoints": {
+		"main": [
+			"cc.unilock.zzz_rawr.ZzzRawr"
+		]
+	},
 	"depends": {
 		"fabricloader": "*",
 		"minecraft": ">=1.19.2"
