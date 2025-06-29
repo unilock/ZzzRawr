@@ -1,6 +1,6 @@
 package cc.unilock.zzz_rawr.mixin;
 
-import cc.unilock.zzz_rawr.config.ZzzRawrConfig;
+import cc.unilock.zzz_rawr.ZzzRawr;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
@@ -15,6 +15,6 @@ import java.util.function.BooleanSupplier;
 public class ServerWorldMixin {
 	@Inject(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/world/ServerWorld;wakeSleepingPlayers()V"))
 	public void onWakeSleepingPlayers(BooleanSupplier shouldKeepTicking, CallbackInfo ci) {
-		((ServerWorld) (Object) this).getServer().getPlayerManager().broadcast(Text.literal(ZzzRawrConfig.INSTANCE.messages.value().get(((ServerWorld) (Object) this).getRandom().nextInt(ZzzRawrConfig.INSTANCE.messages.value().size()))).formatted(Formatting.GOLD), false);
+		((ServerWorld) (Object) this).getServer().getPlayerManager().broadcast(Text.literal(ZzzRawr.random(((ServerWorld) (Object) this).getRandom())).formatted(Formatting.GOLD), false);
 	}
 }
